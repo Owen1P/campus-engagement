@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Campus Engagement Analytics</title>
+<link rel="stylesheet" href="assets/style.css" />
+
+<!-- Plotly, Leaflet, PapaParse, Day.js -->
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/customParseFormat.js"></script>
+<script>dayjs.extend(dayjs_plugin_customParseFormat)</script>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="title">
+      <h1>Campus Engagement Analytics</h1>
+      <div class="sub">Interactive dashboard for Student Affairs & Wellness</div>
+    </div>
+    <div class="badge">v1 • GitHub Pages</div>
+  </div>
+
+  
+  <div class="grid kpis">
+    <div class="card">
+      <h3>Engagement Rate</h3>
+      <div id="kpi-engagement" class="big">—</div>
+      <div class="sub">Unique attendees ÷ enrolled (per month)</div>
+    </div>
+    <div class="card">
+      <h3>Category Attendance</h3>
+      <div id="kpi-category" class="big">—</div>
+      <div class="sub">Total attendance (filtered)</div>
+    </div>
+    <div class="card">
+      <h3>Mood Alignment</h3>
+      <div id="kpi-mood" class="big">—</div>
+      <div class="sub">Correlation: attendance vs mood index</div>
+    </div>
+    <div class="card">
+      <h3>Repeat Attendance</h3>
+      <div id="kpi-repeat" class="big">—</div>
+      <div class="sub">% of attendees who returned within ~60 days</div>
+    </div>
+  </div>
+
+  <div class="grid layout" style="margin-top:16px">
+    <!-- Filters -->
+    <div class="card filters">
+      <div class="row">
+        <label for="dateStart">Start Month</label>
+        <input id="dateStart" class="input" type="month" />
+      </div>
+      <div class="row">
+        <label for="dateEnd">End Month</label>
+        <input id="dateEnd" class="input" type="month" />
+      </div>
+      <div class="row">
+        <label for="selType">Event Type</label>
+        <select id="selType" class="select" multiple size="4"></select>
+      </div>
+      <div class="row">
+        <label for="selMood">Mood Tag</label>
+        <select id="selMood" class="select" multiple size="4"></select>
+      </div>
+      <div class="row">
+        <label for="selMajor">Major Target</label>
+        <select id="selMajor" class="select" multiple size="6"></select>
+      </div>
+      <div class="flex">
+        <button id="btnApply" class="btn">Apply Filters</button>
+        <button id="btnReset" class="btn ghost">Reset</button>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="grid" style="gap:16px">
+      <div class="section">
+        <h2>Engagement Over Time</h2>
+        <div class="card"><div id="chartLine" style="height:280px"></div></div>
+      </div>
+      <div class="section">
+        <h2>Attendance by Event Type</h2>
+        <div class="card"><div id="chartBar" style="height:300px"></div></div>
+      </div>
+      <div class="section">
+        <h2>Event Map & Legend</h2>
+        <div class="card">
+          <div id="map" style="height:360px; border-radius:12px"></div>
+          <div class="legend" id="legend"></div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Event Details</h2>
+        <div class="card">
+          <table class="table" id="tbl">
+            <thead>
+              <tr>
+                <th>Event</th><th>Date</th><th>Type</th><th>Major</th><th>Mood</th><th style="text-align:right">Attendance</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">Filters affect all charts • Data demo • Built with Plotly, Leaflet, PapaParse</div>
+</div>
+
+<script>
+// ---- DOM refs ----
+const $ = (id) => document.getElementById(id);
+
+const dateStart = $('dateStart');
+const dateEnd   = $('dateEnd');
+const selType   = $('selType');
+const selMood   = $('selMood');
+const selMajor  = $('selMajor');
+const btnApply  = $('btnApply');
+const btnReset  = $('btnReset');
+const legend    = $('legend');
+const tbody     = $('tbody');
+
+// ---- Utils ----
+const fmtPct = v => (isFinite(v) ? (v*100).toFixed(1)+'%' : '—');
+const fmtInt = v => isFinite(v) ? v.toLocaleString() : '—';
+const toMonthKey = d => dayjs(d).format('YYYY-MM');
+const monthToDate = m => dayjs(m, 'YYYY-MM').startOf('month').toDate();
+const moodIndex = m => m==='Positive'?1 : (m==='Neutral'?0 : (m==='Stressed'?-1:null));
+const unique = arr => [...new Set(arr)];
+
+// Data containers
+let ATT = [];   // attendance_log rows
+let BASE = [];  // student_base rows
+
+//Load CSVs 
+function loadCSV(url){
+  return new Promise((resolve,reject)=>{
+    Papa.parse(url,{
+      download:true, header:true, dynamicTyping:true,
+      complete: res => resolve(res.data.filter(r=>Object.keys(r).some(k=>r[k]!=='' && r[k]!==null && r[k]!==undefined))),
+      error: err => reject(err)
+    });
+  });
+}
+
+// Map
+let map, markers;
+  function initMap(){
+  map = L.map('map',{zoomControl:true, scrollWheelZoom:false}).setView([35.307, -80.735], 14);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    maxZoom:19, attribution:'© OpenStreetMap'
+  }).addTo(map);
+  markers = L.featureGroup().addTo(map);
+}
+
+
+function populateFilters(){
+  const types = unique(ATT.map(d=>d.event_type)).sort();
+  const moods = unique(ATT.map(d=>d.mood_tag)).sort();
+  const majors = unique(ATT.map(d=>d.major_target)).sort();
+  const months = unique(ATT.map(d=>toMonthKey(d.event_date))).sort();
+
+  selType.innerHTML  = types.map(t=>`<option selected>${t}</option>`).join('');
+  selMood.innerHTML  = moods.map(m=>`<option selected>${m}</option>`).join('');
+  selMajor.innerHTML = majors.map(m=>`<option selected>${m}</option>`).join('');
+
+  dateStart.value = months[0];
+  dateEnd.value   = months[months.length-1];
+}
+
+function getSelections(selectEl){
+  return [...selectEl.options].filter(o=>o.selected).map(o=>o.value);
+}
+
+function filterData(){
+  const mStart = dayjs(dateStart.value+'-01');
+  const mEnd   = dayjs(dateEnd.value+'-01').endOf('month');
+  const types  = getSelections(selType);
+  const moods  = getSelections(selMood);
+  const majors = getSelections(selMajor);
+
+  const att = ATT.filter(d=>{
+    const dte = dayjs(d.event_date);
+    return dte.isAfter(mStart.subtract(1,'day')) && dte.isBefore(mEnd.add(1,'day')) &&
+           (types.length===0 || types.includes(d.event_type)) &&
+           (moods.length===0 || moods.includes(d.mood_tag)) &&
+           (majors.length===0 || majors.includes(d.major_target));
+  });
+
+  const base = BASE.filter(b=>{
+    const md = dayjs(b.month+'-01');
+    return md.isAfter(mStart.subtract(1,'day')) && md.isBefore(mEnd.add(1,'day'));
+  });
+
+  return {att, base};
+}
+
+// KPIs & Charts
+function computeKPIs(att, base){
+  const byMonth = {};
+  att.forEach(r=>{
+    const m = toMonthKey(r.event_date);
+    byMonth[m] ||= {students:new Set(), attended:0, events:new Set()};
+    byMonth[m].students.add(r.student_id);
+    byMonth[m].attended += (+r.attended||0);
+    byMonth[m].events.add(r.event_id);
+  });
+  base.forEach(b=>{
+    byMonth[b.month] ||= {students:new Set(), attended:0, events:new Set()};
+    byMonth[b.month].enrolled = (byMonth[b.month].enrolled||0) + (+b.enrolled_students||0);
+  });
+
+  const months = Object.keys(byMonth).sort();
+  const seriesEngage = months.map(m=>{
+    const o = byMonth[m];
+    const engaged = o.students.size;
+    const enrolled = o.enrolled || 0;
+    return {month:m, rate: enrolled ? engaged/enrolled : null};
+  });
+
+  const latest = seriesEngage[seriesEngage.length-1];
+  const engagementRate = latest?.rate ?? null;
+
+  const totalAttendance = att.reduce((s,r)=>s+(+r.attended||0),0);
+
+  const repeatNumer = unique(att.filter(r=>String(r.repeat_flag).toLowerCase()==='true').map(r=>r.student_id)).length;
+  const repeatDenom = unique(att.map(r=>r.student_id)).length;
+  const repeatRate  = repeatDenom ? repeatNumer/repeatDenom : null;
+
+  // Mood correlation across events in view
+  const byEvent = {};
+  att.forEach(r=>{
+    const k = r.event_id;
+    byEvent[k] ||= {att:0, mood: moodIndex(r.mood_tag)};
+    byEvent[k].att += (+r.attended||0);
+  });
+  const xs = [], ys = [];
+  Object.values(byEvent).forEach(o=>{
+    if (o.mood!==null && isFinite(o.att)) { xs.push(o.att); ys.push(o.mood); }
+  });
+  const corr = (()=>{
+    const n=xs.length; if(n<2) return null;
+    const mx = xs.reduce((a,b)=>a+b,0)/n, my = ys.reduce((a,b)=>a+b,0)/n;
+    let num=0, dx=0, dy=0;
+    for(let i=0;i<n;i++){ const ax=xs[i]-mx, ay=ys[i]-my; num+=ax*ay; dx+=ax*ax; dy+=ay*ay; }
+    return (dx*dy>0)? num/Math.sqrt(dx*dy) : null;
+  })();
+
+  return {engagementRate, totalAttendance, repeatRate, corr, seriesEngage};
+}
+
+function renderKPIs(k){
+  $('kpi-engagement').textContent = fmtPct(k.engagementRate);
+  $('kpi-category').textContent   = fmtInt(k.totalAttendance);
+  $('kpi-mood').textContent       = (k.corr===null?'—':k.corr.toFixed(2));
+  $('kpi-repeat').textContent     = fmtPct(k.repeatRate);
+}
+
+function renderLine(series){
+  const x = series.map(d=>d.month);
+  const y = series.map(d=>d.rate===null?null:d.rate*100);
+  const tr = {x, y, type:'scatter', mode:'lines+markers', name:'Engagement %'};
+  Plotly.newPlot('chartLine',[tr],{
+    margin:{l:50,r:20,t:10,b:40},
+    paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)',
+    xaxis:{title:'Month', tickangle:-30, gridcolor:'#1f2636', color:'#E6EAF2'},
+    yaxis:{title:'% Engaged', gridcolor:'#1f2636', color:'#E6EAF2', rangemode:'tozero'},
+    font:{color:'#E6EAF2'}
+  },{displayModeBar:false, responsive:true});
+}
+
+function renderBar(att){
+  const byType = {};
+  const eventsPerType = {};
+  att.forEach(r=>{
+    byType[r.event_type] = (byType[r.event_type]||0) + (+r.attended||0);
+    const k = r.event_type+'|'+r.event_id;
+    eventsPerType[k] = 1;
+  });
+  const types = Object.keys(byType).sort();
+  const totals = types.map(t=>byType[t]);
+  const avgPerType = types.map(t=>{
+    const nEvents = Object.keys(eventsPerType).filter(k=>k.startsWith(t+'|')).length;
+    return nEvents ? byType[t]/nEvents : 0;
+  });
+
+  const bars = {x:types, y:totals, type:'bar', name:'Total Attendance'};
+  const shapes = avgPerType.map((avg,i)=>({
+    type:'line', x0:types[i], x1:types[i], y0:avg, y1:avg,
+    line:{dash:'dot', width:2, color:'#7EE787'}
+  }));
+  Plotly.newPlot('chartBar',[bars],{
+    margin:{l:60,r:20,t:10,b:40},
+    paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)',
+    xaxis:{title:'Event Type', color:'#E6EAF2'},
+    yaxis:{title:'Total Attendance', gridcolor:'#1f2636', color:'#E6EAF2'},
+    shapes,
+    annotations: avgPerType.map((v,i)=>({
+      x:types[i], y:v, text:'Avg/Event', yshift:-10, showarrow:false, font:{size:10,color:'#7EE787'}
+    })),
+    font:{color:'#E6EAF2'}
+  },{displayModeBar:false, responsive:true});
+}
+
+function initMapIfNeeded(){
+  if(!map){ initMap(); }
+}
+
+function renderMap(att){
+  initMapIfNeeded();
+  markers.clearLayers();
+  const groups = {};
+  att.forEach(r=>{
+    const key = [r.building, r.latitude, r.longitude, r.event_type].join('|');
+    groups[key] ||= {building:r.building, lat:r.latitude, lng:r.longitude, type:r.event_type, att:0, events:new Set()};
+    groups[key].att += (+r.attended||0);
+    groups[key].events.add(r.event_id);
+  });
+  const colors = {Academic:'#6EA8FE', Career:'#FFD580', Mindfulness:'#7EE787'};
+  Object.values(groups).forEach(g=>{
+    const radius = Math.max(6, Math.min(22, Math.sqrt(g.att)/2 + 6));
+    const circle = L.circleMarker([g.lat,g.lng],{
+      radius, color:colors[g.type]||'#ccc', weight:2, fillColor:colors[g.type]||'#ccc', fillOpacity:.25
+    }).bindPopup(
+      `<b>${g.building}</b><br>Type: ${g.type}<br>Total Attendance: ${g.att.toLocaleString()}<br>Events: ${g.events.size}`
+    );
+    markers.addLayer(circle);
+  });
+  if (markers.getLayers().length) {
+  map.fitBounds(markers.getBounds(), { padding: [20,20] });
+}
+  legend.innerHTML = ['Academic','Career','Mindfulness'].map(t=>`<span class="pill">${t}</span>`).join('');
+}
+
+function renderTable(att){
+  const byEvent = {};
+  att.forEach(r=>{
+    const k = r.event_id;
+    byEvent[k] ||= {name:r.event_name, date: r.event_date, type:r.event_type, major:r.major_target, mood:r.mood_tag, att:0};
+    byEvent[k].att += (+r.attended||0);
+  });
+  const rows = Object.values(byEvent).sort((a,b)=> new Date(b.date)-new Date(a.date));
+  tbody.innerHTML = rows.map(r=>`
+    <tr>
+      <td>${r.name}</td>
+      <td>${dayjs(r.date).format('YYYY-MM-DD')}</td>
+      <td>${r.type}</td>
+      <td>${r.major}</td>
+      <td>${r.mood}</td>
+      <td>${fmtInt(r.att)}</td>
+    </tr>
+  `).join('');
+}
+
+function applyFilters(){
+  const {att, base} = filterData();
+  const k = computeKPIs(att, base);
+  renderKPIs(k);
+  renderLine(k.seriesEngage);
+  renderBar(att);
+  renderMap(att);
+  renderTable(att);
+}
+
+function resetFilters(){
+  populateFilters();
+  applyFilters();
+}
+
+//  Boot 
+(async function(){
+  const [att, base] = await Promise.all([
+    loadCSV('data/attendance_log.csv'),
+    loadCSV('data/student_base.csv'),
+  ]);
+
+  // Coerce types
+  ATT = att.map(r=>({
+    ...r,
+    event_date: dayjs(r.event_date).isValid()? dayjs(r.event_date).toDate() : new Date(r.event_date),
+    attended: +r.attended || 0,
+    repeat_flag: String(r.repeat_flag).toLowerCase()==='true'
+  }));
+  BASE = base.map(r=>({
+    ...r,
+    month: String(r.month),
+    enrolled_students: +r.enrolled_students || 0
+  }));
+
+  populateFilters();
+  applyFilters();
+
+  // Wire buttons 
+  btnApply.addEventListener('click', applyFilters);
+  btnReset.addEventListener('click', resetFilters);
+})();
+</script>
+</body>
+</html>
