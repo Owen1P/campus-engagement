@@ -1,0 +1,315 @@
+event_id,event_date,event_name,event_type,mood_tag,major_target,building,latitude,longitude,capacity
+1000,2025-01-01,Academic Workshop,Academic,Stressed,Business,Student Union,35.3059,-80.7327,114
+1001,2025-01-01,Mindfulness Mixer,Mindfulness,Positive,CS,Cone Center,35.3078,-80.7364,103
+1002,2025-01-02,Mindfulness Talk,Mindfulness,Positive,Biology,EPIC,35.3097,-80.7417,103
+1003,2025-01-03,Academic Workshop,Academic,Stressed,Business,Student Union,35.3059,-80.7327,146
+1004,2025-01-04,Mindfulness Workshop,Mindfulness,Stressed,Biology,CHHS,35.3072,-80.7338,91
+1005,2025-01-07,Career Mixer,Career,Stressed,Psychology,EPIC,35.3097,-80.7417,92
+1006,2025-01-07,Career Talk,Career,Neutral,CS,CHHS,35.3072,-80.7338,86
+1007,2025-01-08,Academic Workshop,Academic,Stressed,Biology,Student Union,35.3059,-80.7327,84
+1008,2025-01-08,Mindfulness Talk,Mindfulness,Stressed,Psychology,Cone Center,35.3078,-80.7364,73
+1009,2025-01-12,Career Study Hall,Career,Positive,Biology,CHHS,35.3072,-80.7338,104
+1010,2025-01-12,Career Study Hall,Career,Neutral,CS,EPIC,35.3097,-80.7417,132
+1011,2025-01-13,Mindfulness Workshop,Mindfulness,Positive,Business,EPIC,35.3097,-80.7417,118
+1012,2025-01-14,Academic Talk,Academic,Neutral,CS,Student Union,35.3059,-80.7327,179
+1013,2025-01-17,Academic Study Hall,Academic,Positive,Business,Cone Center,35.3078,-80.7364,150
+1014,2025-01-18,Academic Workshop,Academic,Stressed,CS,Student Union,35.3059,-80.7327,54
+1015,2025-01-18,Career Mixer,Career,Neutral,CS,Atkins Library,35.3077,-80.7323,110
+1016,2025-01-20,Academic Study Hall,Academic,Neutral,Psychology,CHHS,35.3072,-80.7338,125
+1017,2025-01-20,Academic Talk,Academic,Neutral,Art,Student Union,35.3059,-80.7327,168
+1018,2025-01-21,Academic Study Hall,Academic,Stressed,Biology,Student Union,35.3059,-80.7327,151
+1019,2025-01-21,Academic Workshop,Academic,Neutral,Art,EPIC,35.3097,-80.7417,104
+1020,2025-01-23,Career Mixer,Career,Neutral,Biology,Atkins Library,35.3077,-80.7323,109
+1021,2025-01-24,Career Study Hall,Career,Positive,Business,CHHS,35.3072,-80.7338,51
+1022,2025-01-25,Academic Workshop,Academic,Neutral,Psychology,CHHS,35.3072,-80.7338,135
+1023,2025-01-26,Academic Talk,Academic,Stressed,Business,Atkins Library,35.3077,-80.7323,88
+1024,2025-01-27,Academic Mixer,Academic,Stressed,Psychology,EPIC,35.3097,-80.7417,49
+1025,2025-01-28,Career Study Hall,Career,Stressed,Business,Atkins Library,35.3077,-80.7323,106
+1026,2025-01-29,Academic Workshop,Academic,Neutral,Psychology,Student Union,35.3059,-80.7327,91
+1027,2025-01-30,Academic Study Hall,Academic,Positive,CS,Cone Center,35.3078,-80.7364,134
+1028,2025-01-30,Academic Mixer,Academic,Positive,Biology,Cone Center,35.3078,-80.7364,85
+1029,2025-01-31,Academic Study Hall,Academic,Neutral,Business,Atkins Library,35.3077,-80.7323,92
+1030,2025-01-31,Mindfulness Mixer,Mindfulness,Stressed,Psychology,Student Union,35.3059,-80.7327,129
+1031,2025-01-31,Career Workshop,Career,Neutral,Art,Student Union,35.3059,-80.7327,63
+1032,2025-02-02,Mindfulness Mixer,Mindfulness,Stressed,Biology,Cone Center,35.3078,-80.7364,71
+1033,2025-02-03,Academic Talk,Academic,Positive,Business,Cone Center,35.3078,-80.7364,92
+1034,2025-02-05,Academic Workshop,Academic,Stressed,CS,Atkins Library,35.3077,-80.7323,49
+1035,2025-02-05,Academic Study Hall,Academic,Neutral,Business,Cone Center,35.3078,-80.7364,163
+1036,2025-02-07,Mindfulness Workshop,Mindfulness,Stressed,Business,EPIC,35.3097,-80.7417,171
+1037,2025-02-10,Academic Mixer,Academic,Neutral,Business,Atkins Library,35.3077,-80.7323,121
+1038,2025-02-10,Academic Study Hall,Academic,Stressed,Biology,Atkins Library,35.3077,-80.7323,156
+1039,2025-02-12,Academic Study Hall,Academic,Neutral,Psychology,Atkins Library,35.3077,-80.7323,133
+1040,2025-02-12,Mindfulness Workshop,Mindfulness,Neutral,Art,EPIC,35.3097,-80.7417,124
+1041,2025-02-12,Career Study Hall,Career,Neutral,CS,EPIC,35.3097,-80.7417,99
+1042,2025-02-13,Career Talk,Career,Stressed,Biology,EPIC,35.3097,-80.7417,129
+1043,2025-02-13,Academic Talk,Academic,Neutral,Biology,CHHS,35.3072,-80.7338,152
+1044,2025-02-13,Academic Mixer,Academic,Neutral,Business,Cone Center,35.3078,-80.7364,146
+1045,2025-02-14,Academic Mixer,Academic,Neutral,Business,CHHS,35.3072,-80.7338,162
+1046,2025-02-15,Academic Mixer,Academic,Neutral,Biology,Cone Center,35.3078,-80.7364,175
+1047,2025-02-17,Academic Mixer,Academic,Stressed,Psychology,Atkins Library,35.3077,-80.7323,60
+1048,2025-02-18,Academic Workshop,Academic,Neutral,CS,EPIC,35.3097,-80.7417,116
+1049,2025-02-18,Academic Talk,Academic,Neutral,CS,Atkins Library,35.3077,-80.7323,123
+1050,2025-02-18,Career Study Hall,Career,Neutral,Psychology,Cone Center,35.3078,-80.7364,143
+1051,2025-02-19,Academic Workshop,Academic,Neutral,CS,Cone Center,35.3078,-80.7364,75
+1052,2025-02-19,Career Talk,Career,Neutral,CS,Atkins Library,35.3077,-80.7323,170
+1053,2025-02-21,Academic Mixer,Academic,Stressed,CS,EPIC,35.3097,-80.7417,158
+1054,2025-02-21,Mindfulness Mixer,Mindfulness,Stressed,Biology,EPIC,35.3097,-80.7417,128
+1055,2025-02-22,Academic Mixer,Academic,Neutral,Business,CHHS,35.3072,-80.7338,160
+1056,2025-02-22,Career Talk,Career,Neutral,Business,Student Union,35.3059,-80.7327,48
+1057,2025-02-23,Academic Study Hall,Academic,Neutral,Psychology,Atkins Library,35.3077,-80.7323,91
+1058,2025-02-24,Academic Mixer,Academic,Positive,CS,CHHS,35.3072,-80.7338,134
+1059,2025-02-25,Academic Talk,Academic,Neutral,Biology,Cone Center,35.3078,-80.7364,132
+1060,2025-02-26,Career Study Hall,Career,Positive,CS,Atkins Library,35.3077,-80.7323,44
+1061,2025-02-26,Career Mixer,Career,Stressed,CS,Student Union,35.3059,-80.7327,126
+1062,2025-02-28,Academic Mixer,Academic,Stressed,CS,Cone Center,35.3078,-80.7364,63
+1063,2025-02-28,Career Mixer,Career,Positive,Biology,Cone Center,35.3078,-80.7364,173
+1064,2025-03-01,Career Workshop,Career,Neutral,Business,Atkins Library,35.3077,-80.7323,58
+1065,2025-03-02,Career Mixer,Career,Neutral,Biology,EPIC,35.3097,-80.7417,152
+1066,2025-03-03,Career Workshop,Career,Stressed,CS,CHHS,35.3072,-80.7338,141
+1067,2025-03-04,Academic Study Hall,Academic,Positive,Business,Atkins Library,35.3077,-80.7323,87
+1068,2025-03-04,Mindfulness Talk,Mindfulness,Positive,CS,CHHS,35.3072,-80.7338,115
+1069,2025-03-07,Academic Workshop,Academic,Neutral,Biology,Student Union,35.3059,-80.7327,117
+1070,2025-03-07,Mindfulness Talk,Mindfulness,Positive,Psychology,Atkins Library,35.3077,-80.7323,131
+1071,2025-03-07,Career Talk,Career,Stressed,CS,Cone Center,35.3078,-80.7364,159
+1072,2025-03-08,Academic Workshop,Academic,Positive,Business,EPIC,35.3097,-80.7417,53
+1073,2025-03-09,Academic Workshop,Academic,Neutral,Psychology,EPIC,35.3097,-80.7417,82
+1074,2025-03-09,Mindfulness Mixer,Mindfulness,Positive,CS,Student Union,35.3059,-80.7327,46
+1075,2025-03-10,Mindfulness Workshop,Mindfulness,Neutral,Art,Cone Center,35.3078,-80.7364,133
+1076,2025-03-11,Academic Workshop,Academic,Stressed,CS,Student Union,35.3059,-80.7327,103
+1077,2025-03-11,Mindfulness Talk,Mindfulness,Neutral,Art,Atkins Library,35.3077,-80.7323,132
+1078,2025-03-15,Mindfulness Workshop,Mindfulness,Neutral,Biology,Student Union,35.3059,-80.7327,134
+1079,2025-03-16,Mindfulness Talk,Mindfulness,Positive,Biology,Cone Center,35.3078,-80.7364,45
+1080,2025-03-16,Academic Study Hall,Academic,Neutral,Business,EPIC,35.3097,-80.7417,117
+1081,2025-03-16,Mindfulness Workshop,Mindfulness,Neutral,Biology,CHHS,35.3072,-80.7338,67
+1082,2025-03-17,Career Workshop,Career,Stressed,Business,EPIC,35.3097,-80.7417,49
+1083,2025-03-19,Career Mixer,Career,Neutral,CS,CHHS,35.3072,-80.7338,65
+1084,2025-03-19,Mindfulness Study Hall,Mindfulness,Neutral,Biology,Student Union,35.3059,-80.7327,163
+1085,2025-03-21,Academic Talk,Academic,Positive,Business,EPIC,35.3097,-80.7417,131
+1086,2025-03-21,Mindfulness Talk,Mindfulness,Neutral,Business,CHHS,35.3072,-80.7338,168
+1087,2025-03-21,Academic Workshop,Academic,Neutral,CS,EPIC,35.3097,-80.7417,82
+1088,2025-03-22,Career Talk,Career,Positive,Psychology,Atkins Library,35.3077,-80.7323,158
+1089,2025-03-23,Academic Talk,Academic,Neutral,Psychology,Student Union,35.3059,-80.7327,106
+1090,2025-03-25,Career Study Hall,Career,Positive,Business,EPIC,35.3097,-80.7417,126
+1091,2025-03-26,Career Study Hall,Career,Neutral,Business,Student Union,35.3059,-80.7327,90
+1092,2025-03-26,Career Mixer,Career,Positive,Biology,Atkins Library,35.3077,-80.7323,159
+1093,2025-03-27,Mindfulness Talk,Mindfulness,Neutral,Biology,EPIC,35.3097,-80.7417,109
+1094,2025-03-30,Academic Workshop,Academic,Neutral,Psychology,EPIC,35.3097,-80.7417,143
+1095,2025-03-30,Career Study Hall,Career,Neutral,Biology,Student Union,35.3059,-80.7327,160
+1096,2025-03-31,Academic Talk,Academic,Positive,CS,EPIC,35.3097,-80.7417,110
+1097,2025-04-01,Mindfulness Workshop,Mindfulness,Neutral,Business,Cone Center,35.3078,-80.7364,139
+1098,2025-04-01,Academic Workshop,Academic,Positive,CS,CHHS,35.3072,-80.7338,146
+1099,2025-04-01,Academic Mixer,Academic,Neutral,Biology,EPIC,35.3097,-80.7417,179
+1100,2025-04-02,Mindfulness Talk,Mindfulness,Stressed,CS,EPIC,35.3097,-80.7417,158
+1101,2025-04-04,Academic Talk,Academic,Neutral,CS,Student Union,35.3059,-80.7327,65
+1102,2025-04-04,Mindfulness Talk,Mindfulness,Neutral,CS,Atkins Library,35.3077,-80.7323,67
+1103,2025-04-05,Career Mixer,Career,Neutral,CS,EPIC,35.3097,-80.7417,158
+1104,2025-04-06,Career Workshop,Career,Positive,Biology,CHHS,35.3072,-80.7338,142
+1105,2025-04-07,Academic Study Hall,Academic,Stressed,Psychology,Student Union,35.3059,-80.7327,148
+1106,2025-04-08,Career Mixer,Career,Stressed,Business,Atkins Library,35.3077,-80.7323,94
+1107,2025-04-08,Career Workshop,Career,Neutral,CS,Student Union,35.3059,-80.7327,96
+1108,2025-04-09,Career Workshop,Career,Neutral,Psychology,Student Union,35.3059,-80.7327,76
+1109,2025-04-09,Mindfulness Workshop,Mindfulness,Neutral,Psychology,Atkins Library,35.3077,-80.7323,124
+1110,2025-04-09,Academic Study Hall,Academic,Neutral,Biology,EPIC,35.3097,-80.7417,140
+1111,2025-04-10,Career Study Hall,Career,Positive,Art,Cone Center,35.3078,-80.7364,141
+1112,2025-04-11,Mindfulness Study Hall,Mindfulness,Stressed,CS,EPIC,35.3097,-80.7417,154
+1113,2025-04-11,Career Workshop,Career,Positive,Art,EPIC,35.3097,-80.7417,178
+1114,2025-04-11,Academic Talk,Academic,Positive,Biology,CHHS,35.3072,-80.7338,40
+1115,2025-04-13,Career Talk,Career,Stressed,Psychology,Atkins Library,35.3077,-80.7323,177
+1116,2025-04-13,Academic Study Hall,Academic,Positive,CS,Student Union,35.3059,-80.7327,116
+1117,2025-04-14,Mindfulness Mixer,Mindfulness,Neutral,Psychology,Cone Center,35.3078,-80.7364,46
+1118,2025-04-14,Academic Mixer,Academic,Positive,Biology,CHHS,35.3072,-80.7338,41
+1119,2025-04-14,Career Mixer,Career,Stressed,CS,Cone Center,35.3078,-80.7364,73
+1120,2025-04-15,Mindfulness Study Hall,Mindfulness,Neutral,Business,Student Union,35.3059,-80.7327,114
+1121,2025-04-16,Mindfulness Talk,Mindfulness,Positive,CS,Atkins Library,35.3077,-80.7323,160
+1122,2025-04-17,Mindfulness Talk,Mindfulness,Neutral,Business,EPIC,35.3097,-80.7417,56
+1123,2025-04-18,Academic Talk,Academic,Neutral,Psychology,Student Union,35.3059,-80.7327,141
+1124,2025-04-18,Mindfulness Talk,Mindfulness,Stressed,CS,CHHS,35.3072,-80.7338,115
+1125,2025-04-19,Mindfulness Workshop,Mindfulness,Positive,Business,Atkins Library,35.3077,-80.7323,95
+1126,2025-04-20,Career Workshop,Career,Neutral,Psychology,Atkins Library,35.3077,-80.7323,89
+1127,2025-04-20,Academic Mixer,Academic,Neutral,Business,Student Union,35.3059,-80.7327,88
+1128,2025-04-20,Academic Study Hall,Academic,Stressed,Biology,EPIC,35.3097,-80.7417,178
+1129,2025-04-21,Academic Talk,Academic,Neutral,Art,Student Union,35.3059,-80.7327,114
+1130,2025-04-21,Career Talk,Career,Positive,Business,Atkins Library,35.3077,-80.7323,160
+1131,2025-04-22,Academic Workshop,Academic,Stressed,CS,Student Union,35.3059,-80.7327,119
+1132,2025-04-23,Mindfulness Mixer,Mindfulness,Neutral,Psychology,Cone Center,35.3078,-80.7364,123
+1133,2025-04-23,Mindfulness Talk,Mindfulness,Stressed,Biology,CHHS,35.3072,-80.7338,66
+1134,2025-04-24,Academic Study Hall,Academic,Positive,Art,CHHS,35.3072,-80.7338,171
+1135,2025-04-26,Academic Study Hall,Academic,Neutral,CS,EPIC,35.3097,-80.7417,49
+1136,2025-04-26,Career Workshop,Career,Neutral,Psychology,Atkins Library,35.3077,-80.7323,160
+1137,2025-04-26,Academic Talk,Academic,Neutral,Business,Atkins Library,35.3077,-80.7323,69
+1138,2025-04-27,Academic Workshop,Academic,Neutral,CS,Student Union,35.3059,-80.7327,98
+1139,2025-04-29,Career Study Hall,Career,Neutral,Psychology,Cone Center,35.3078,-80.7364,150
+1140,2025-04-30,Academic Talk,Academic,Neutral,CS,Cone Center,35.3078,-80.7364,161
+1141,2025-04-30,Academic Talk,Academic,Neutral,Art,CHHS,35.3072,-80.7338,46
+1142,2025-05-01,Career Workshop,Career,Neutral,CS,Student Union,35.3059,-80.7327,42
+1143,2025-05-06,Academic Study Hall,Academic,Positive,Business,Cone Center,35.3078,-80.7364,159
+1144,2025-05-08,Career Mixer,Career,Neutral,Biology,Cone Center,35.3078,-80.7364,81
+1145,2025-05-08,Mindfulness Mixer,Mindfulness,Neutral,Business,Student Union,35.3059,-80.7327,178
+1146,2025-05-09,Mindfulness Study Hall,Mindfulness,Neutral,Biology,Atkins Library,35.3077,-80.7323,81
+1147,2025-05-10,Academic Study Hall,Academic,Neutral,CS,Student Union,35.3059,-80.7327,88
+1148,2025-05-13,Career Mixer,Career,Positive,Psychology,Atkins Library,35.3077,-80.7323,60
+1149,2025-05-13,Academic Workshop,Academic,Neutral,Business,EPIC,35.3097,-80.7417,64
+1150,2025-05-14,Mindfulness Mixer,Mindfulness,Neutral,CS,EPIC,35.3097,-80.7417,121
+1151,2025-05-16,Mindfulness Workshop,Mindfulness,Neutral,Business,EPIC,35.3097,-80.7417,78
+1152,2025-05-16,Academic Study Hall,Academic,Positive,CS,Student Union,35.3059,-80.7327,177
+1153,2025-05-18,Academic Study Hall,Academic,Stressed,CS,Cone Center,35.3078,-80.7364,126
+1154,2025-05-19,Academic Study Hall,Academic,Positive,Biology,CHHS,35.3072,-80.7338,77
+1155,2025-05-20,Academic Workshop,Academic,Neutral,CS,CHHS,35.3072,-80.7338,152
+1156,2025-05-20,Career Mixer,Career,Neutral,CS,CHHS,35.3072,-80.7338,132
+1157,2025-05-20,Career Talk,Career,Neutral,Art,Student Union,35.3059,-80.7327,65
+1158,2025-05-22,Mindfulness Study Hall,Mindfulness,Neutral,Psychology,Cone Center,35.3078,-80.7364,130
+1159,2025-05-22,Academic Study Hall,Academic,Neutral,Biology,Cone Center,35.3078,-80.7364,143
+1160,2025-05-23,Career Mixer,Career,Neutral,Art,CHHS,35.3072,-80.7338,161
+1161,2025-05-23,Academic Talk,Academic,Neutral,Biology,CHHS,35.3072,-80.7338,43
+1162,2025-05-24,Academic Talk,Academic,Positive,Biology,CHHS,35.3072,-80.7338,128
+1163,2025-05-24,Career Workshop,Career,Positive,Psychology,Student Union,35.3059,-80.7327,124
+1164,2025-05-24,Mindfulness Talk,Mindfulness,Neutral,CS,Student Union,35.3059,-80.7327,91
+1165,2025-05-27,Academic Workshop,Academic,Stressed,CS,Student Union,35.3059,-80.7327,53
+1166,2025-05-27,Mindfulness Workshop,Mindfulness,Stressed,CS,EPIC,35.3097,-80.7417,177
+1167,2025-05-28,Career Workshop,Career,Neutral,CS,Atkins Library,35.3077,-80.7323,107
+1168,2025-05-29,Career Talk,Career,Neutral,CS,Student Union,35.3059,-80.7327,59
+1169,2025-05-29,Mindfulness Workshop,Mindfulness,Stressed,Art,Student Union,35.3059,-80.7327,178
+1170,2025-05-29,Mindfulness Workshop,Mindfulness,Stressed,CS,EPIC,35.3097,-80.7417,172
+1171,2025-05-30,Academic Talk,Academic,Stressed,Business,Student Union,35.3059,-80.7327,116
+1172,2025-06-01,Academic Study Hall,Academic,Stressed,Business,EPIC,35.3097,-80.7417,144
+1173,2025-06-02,Academic Workshop,Academic,Positive,Biology,Student Union,35.3059,-80.7327,69
+1174,2025-06-03,Academic Talk,Academic,Stressed,CS,Student Union,35.3059,-80.7327,65
+1175,2025-06-03,Academic Workshop,Academic,Neutral,Psychology,Cone Center,35.3078,-80.7364,74
+1176,2025-06-03,Career Talk,Career,Stressed,Biology,CHHS,35.3072,-80.7338,115
+1177,2025-06-07,Mindfulness Talk,Mindfulness,Positive,Business,EPIC,35.3097,-80.7417,109
+1178,2025-06-07,Career Workshop,Career,Neutral,Psychology,Student Union,35.3059,-80.7327,90
+1179,2025-06-07,Mindfulness Workshop,Mindfulness,Neutral,Art,Atkins Library,35.3077,-80.7323,63
+1180,2025-06-08,Academic Workshop,Academic,Neutral,CS,Student Union,35.3059,-80.7327,62
+1181,2025-06-09,Career Study Hall,Career,Neutral,Psychology,Cone Center,35.3078,-80.7364,114
+1182,2025-06-11,Mindfulness Workshop,Mindfulness,Positive,Psychology,Cone Center,35.3078,-80.7364,156
+1183,2025-06-11,Academic Workshop,Academic,Neutral,Psychology,Cone Center,35.3078,-80.7364,152
+1184,2025-06-11,Career Workshop,Career,Positive,Biology,Cone Center,35.3078,-80.7364,69
+1185,2025-06-12,Career Talk,Career,Neutral,Art,Cone Center,35.3078,-80.7364,79
+1186,2025-06-14,Academic Talk,Academic,Neutral,Business,EPIC,35.3097,-80.7417,61
+1187,2025-06-15,Career Study Hall,Career,Neutral,Business,Cone Center,35.3078,-80.7364,124
+1188,2025-06-16,Mindfulness Study Hall,Mindfulness,Neutral,CS,Atkins Library,35.3077,-80.7323,179
+1189,2025-06-18,Mindfulness Talk,Mindfulness,Positive,Art,Cone Center,35.3078,-80.7364,114
+1190,2025-06-19,Academic Study Hall,Academic,Stressed,Psychology,CHHS,35.3072,-80.7338,95
+1191,2025-06-19,Career Study Hall,Career,Positive,Business,EPIC,35.3097,-80.7417,167
+1192,2025-06-20,Career Talk,Career,Neutral,Psychology,EPIC,35.3097,-80.7417,76
+1193,2025-06-22,Career Mixer,Career,Positive,CS,Atkins Library,35.3077,-80.7323,86
+1194,2025-06-22,Academic Workshop,Academic,Positive,Biology,CHHS,35.3072,-80.7338,168
+1195,2025-06-24,Academic Mixer,Academic,Neutral,Business,CHHS,35.3072,-80.7338,168
+1196,2025-06-26,Career Talk,Career,Stressed,Business,CHHS,35.3072,-80.7338,83
+1197,2025-06-27,Mindfulness Study Hall,Mindfulness,Neutral,Business,CHHS,35.3072,-80.7338,43
+1198,2025-06-28,Mindfulness Mixer,Mindfulness,Positive,Psychology,Atkins Library,35.3077,-80.7323,159
+1199,2025-06-29,Career Mixer,Career,Neutral,Business,Cone Center,35.3078,-80.7364,87
+1200,2025-07-01,Mindfulness Study Hall,Mindfulness,Stressed,Art,Atkins Library,35.3077,-80.7323,180
+1201,2025-07-01,Mindfulness Study Hall,Mindfulness,Neutral,Psychology,CHHS,35.3072,-80.7338,73
+1202,2025-07-01,Career Study Hall,Career,Neutral,CS,EPIC,35.3097,-80.7417,91
+1203,2025-07-03,Mindfulness Workshop,Mindfulness,Neutral,CS,EPIC,35.3097,-80.7417,87
+1204,2025-07-03,Mindfulness Mixer,Mindfulness,Stressed,CS,CHHS,35.3072,-80.7338,125
+1205,2025-07-04,Mindfulness Workshop,Mindfulness,Neutral,CS,Atkins Library,35.3077,-80.7323,99
+1206,2025-07-05,Mindfulness Workshop,Mindfulness,Stressed,CS,Cone Center,35.3078,-80.7364,122
+1207,2025-07-06,Mindfulness Study Hall,Mindfulness,Positive,CS,CHHS,35.3072,-80.7338,157
+1208,2025-07-08,Career Study Hall,Career,Neutral,Business,CHHS,35.3072,-80.7338,40
+1209,2025-07-09,Career Workshop,Career,Neutral,Biology,Cone Center,35.3078,-80.7364,177
+1210,2025-07-09,Academic Workshop,Academic,Neutral,Psychology,Student Union,35.3059,-80.7327,91
+1211,2025-07-09,Academic Mixer,Academic,Positive,Biology,CHHS,35.3072,-80.7338,155
+1212,2025-07-10,Academic Talk,Academic,Positive,Biology,Atkins Library,35.3077,-80.7323,71
+1213,2025-07-12,Academic Talk,Academic,Neutral,Business,Cone Center,35.3078,-80.7364,49
+1214,2025-07-12,Academic Mixer,Academic,Neutral,Psychology,Cone Center,35.3078,-80.7364,53
+1215,2025-07-13,Mindfulness Workshop,Mindfulness,Neutral,CS,Atkins Library,35.3077,-80.7323,161
+1216,2025-07-13,Mindfulness Workshop,Mindfulness,Neutral,Biology,Atkins Library,35.3077,-80.7323,99
+1217,2025-07-14,Academic Study Hall,Academic,Positive,Business,Student Union,35.3059,-80.7327,145
+1218,2025-07-14,Career Workshop,Career,Neutral,CS,CHHS,35.3072,-80.7338,131
+1219,2025-07-19,Academic Mixer,Academic,Stressed,CS,CHHS,35.3072,-80.7338,132
+1220,2025-07-19,Academic Mixer,Academic,Neutral,Biology,Cone Center,35.3078,-80.7364,174
+1221,2025-07-22,Academic Study Hall,Academic,Positive,Business,Cone Center,35.3078,-80.7364,117
+1222,2025-07-22,Mindfulness Workshop,Mindfulness,Positive,CS,EPIC,35.3097,-80.7417,171
+1223,2025-07-23,Academic Workshop,Academic,Neutral,Biology,CHHS,35.3072,-80.7338,156
+1224,2025-07-24,Academic Talk,Academic,Neutral,Business,Atkins Library,35.3077,-80.7323,103
+1225,2025-07-25,Academic Study Hall,Academic,Neutral,CS,EPIC,35.3097,-80.7417,166
+1226,2025-07-25,Career Talk,Career,Neutral,Biology,Atkins Library,35.3077,-80.7323,157
+1227,2025-07-26,Academic Talk,Academic,Neutral,Business,EPIC,35.3097,-80.7417,67
+1228,2025-07-26,Career Workshop,Career,Neutral,CS,EPIC,35.3097,-80.7417,54
+1229,2025-07-26,Academic Workshop,Academic,Neutral,Biology,EPIC,35.3097,-80.7417,85
+1230,2025-07-27,Academic Study Hall,Academic,Neutral,CS,Cone Center,35.3078,-80.7364,99
+1231,2025-07-28,Mindfulness Workshop,Mindfulness,Neutral,CS,Student Union,35.3059,-80.7327,56
+1232,2025-07-28,Career Mixer,Career,Neutral,Biology,Cone Center,35.3078,-80.7364,54
+1233,2025-07-29,Mindfulness Workshop,Mindfulness,Neutral,Psychology,Cone Center,35.3078,-80.7364,85
+1234,2025-07-30,Career Mixer,Career,Stressed,CS,Cone Center,35.3078,-80.7364,85
+1235,2025-07-30,Career Mixer,Career,Stressed,Psychology,EPIC,35.3097,-80.7417,96
+1236,2025-07-30,Career Workshop,Career,Neutral,Psychology,Student Union,35.3059,-80.7327,178
+1237,2025-07-31,Career Talk,Career,Neutral,Psychology,Atkins Library,35.3077,-80.7323,100
+1238,2025-07-31,Career Talk,Career,Stressed,Art,CHHS,35.3072,-80.7338,148
+1239,2025-08-01,Career Talk,Career,Neutral,Business,Student Union,35.3059,-80.7327,118
+1240,2025-08-02,Academic Workshop,Academic,Neutral,CS,Student Union,35.3059,-80.7327,110
+1241,2025-08-03,Academic Study Hall,Academic,Positive,Biology,CHHS,35.3072,-80.7338,76
+1242,2025-08-04,Mindfulness Workshop,Mindfulness,Positive,Business,Cone Center,35.3078,-80.7364,132
+1243,2025-08-04,Academic Mixer,Academic,Stressed,Business,Cone Center,35.3078,-80.7364,40
+1244,2025-08-06,Career Mixer,Career,Neutral,Biology,Atkins Library,35.3077,-80.7323,73
+1245,2025-08-06,Career Mixer,Career,Neutral,Biology,EPIC,35.3097,-80.7417,86
+1246,2025-08-07,Academic Workshop,Academic,Positive,CS,CHHS,35.3072,-80.7338,101
+1247,2025-08-07,Career Workshop,Career,Neutral,Art,CHHS,35.3072,-80.7338,175
+1248,2025-08-08,Academic Talk,Academic,Positive,Biology,EPIC,35.3097,-80.7417,56
+1249,2025-08-08,Mindfulness Study Hall,Mindfulness,Neutral,Business,Atkins Library,35.3077,-80.7323,178
+1250,2025-08-09,Academic Workshop,Academic,Neutral,Psychology,Atkins Library,35.3077,-80.7323,164
+1251,2025-08-10,Academic Workshop,Academic,Neutral,Biology,CHHS,35.3072,-80.7338,43
+1252,2025-08-10,Career Workshop,Career,Neutral,Business,EPIC,35.3097,-80.7417,128
+1253,2025-08-11,Career Mixer,Career,Neutral,Psychology,CHHS,35.3072,-80.7338,113
+1254,2025-08-15,Academic Mixer,Academic,Stressed,Psychology,Student Union,35.3059,-80.7327,98
+1255,2025-08-17,Mindfulness Workshop,Mindfulness,Positive,Psychology,Cone Center,35.3078,-80.7364,100
+1256,2025-08-17,Academic Mixer,Academic,Neutral,Art,EPIC,35.3097,-80.7417,133
+1257,2025-08-18,Academic Talk,Academic,Stressed,CS,Atkins Library,35.3077,-80.7323,171
+1258,2025-08-18,Mindfulness Mixer,Mindfulness,Neutral,CS,Atkins Library,35.3077,-80.7323,172
+1259,2025-08-19,Mindfulness Mixer,Mindfulness,Positive,Psychology,Atkins Library,35.3077,-80.7323,102
+1260,2025-08-21,Academic Mixer,Academic,Neutral,CS,Atkins Library,35.3077,-80.7323,68
+1261,2025-08-21,Mindfulness Workshop,Mindfulness,Positive,Biology,Atkins Library,35.3077,-80.7323,177
+1262,2025-08-21,Mindfulness Mixer,Mindfulness,Stressed,CS,Cone Center,35.3078,-80.7364,82
+1263,2025-08-22,Mindfulness Mixer,Mindfulness,Stressed,Biology,EPIC,35.3097,-80.7417,108
+1264,2025-08-23,Academic Workshop,Academic,Neutral,Psychology,Atkins Library,35.3077,-80.7323,142
+1265,2025-08-24,Academic Workshop,Academic,Stressed,Business,Atkins Library,35.3077,-80.7323,44
+1266,2025-08-24,Academic Workshop,Academic,Neutral,Art,Cone Center,35.3078,-80.7364,94
+1267,2025-08-25,Mindfulness Talk,Mindfulness,Neutral,CS,EPIC,35.3097,-80.7417,61
+1268,2025-08-25,Academic Mixer,Academic,Neutral,Business,Student Union,35.3059,-80.7327,76
+1269,2025-08-25,Career Mixer,Career,Neutral,Biology,EPIC,35.3097,-80.7417,127
+1270,2025-08-26,Mindfulness Workshop,Mindfulness,Neutral,CS,EPIC,35.3097,-80.7417,97
+1271,2025-08-26,Mindfulness Workshop,Mindfulness,Neutral,Biology,EPIC,35.3097,-80.7417,116
+1272,2025-08-28,Career Workshop,Career,Positive,Psychology,Cone Center,35.3078,-80.7364,148
+1273,2025-08-30,Academic Study Hall,Academic,Neutral,Psychology,CHHS,35.3072,-80.7338,113
+1274,2025-08-30,Career Talk,Career,Neutral,Art,Atkins Library,35.3077,-80.7323,112
+1275,2025-08-30,Academic Workshop,Academic,Neutral,Business,EPIC,35.3097,-80.7417,72
+1276,2025-08-31,Academic Mixer,Academic,Stressed,Psychology,EPIC,35.3097,-80.7417,79
+1277,2025-09-02,Career Talk,Career,Positive,Psychology,EPIC,35.3097,-80.7417,129
+1278,2025-09-02,Mindfulness Study Hall,Mindfulness,Positive,Psychology,EPIC,35.3097,-80.7417,149
+1279,2025-09-03,Academic Talk,Academic,Neutral,Biology,CHHS,35.3072,-80.7338,111
+1280,2025-09-03,Career Study Hall,Career,Neutral,CS,EPIC,35.3097,-80.7417,89
+1281,2025-09-03,Academic Workshop,Academic,Positive,Biology,Atkins Library,35.3077,-80.7323,166
+1282,2025-09-04,Academic Workshop,Academic,Stressed,CS,Student Union,35.3059,-80.7327,95
+1283,2025-09-05,Mindfulness Mixer,Mindfulness,Positive,Biology,Student Union,35.3059,-80.7327,64
+1284,2025-09-06,Career Talk,Career,Neutral,CS,Student Union,35.3059,-80.7327,93
+1285,2025-09-07,Career Workshop,Career,Neutral,Psychology,Atkins Library,35.3077,-80.7323,150
+1286,2025-09-08,Mindfulness Workshop,Mindfulness,Neutral,Biology,Student Union,35.3059,-80.7327,87
+1287,2025-09-08,Academic Study Hall,Academic,Neutral,Psychology,Student Union,35.3059,-80.7327,73
+1288,2025-09-09,Academic Talk,Academic,Neutral,CS,Atkins Library,35.3077,-80.7323,138
+1289,2025-09-09,Academic Workshop,Academic,Neutral,Biology,Student Union,35.3059,-80.7327,171
+1290,2025-09-10,Career Study Hall,Career,Stressed,Art,EPIC,35.3097,-80.7417,102
+1291,2025-09-11,Mindfulness Study Hall,Mindfulness,Neutral,CS,Cone Center,35.3078,-80.7364,42
+1292,2025-09-11,Career Study Hall,Career,Neutral,Psychology,EPIC,35.3097,-80.7417,147
+1293,2025-09-11,Mindfulness Workshop,Mindfulness,Neutral,CS,EPIC,35.3097,-80.7417,151
+1294,2025-09-12,Mindfulness Talk,Mindfulness,Stressed,Biology,Atkins Library,35.3077,-80.7323,58
+1295,2025-09-12,Academic Talk,Academic,Positive,Art,EPIC,35.3097,-80.7417,88
+1296,2025-09-13,Academic Workshop,Academic,Neutral,CS,CHHS,35.3072,-80.7338,128
+1297,2025-09-14,Mindfulness Study Hall,Mindfulness,Positive,CS,Cone Center,35.3078,-80.7364,64
+1298,2025-09-15,Academic Study Hall,Academic,Stressed,CS,Student Union,35.3059,-80.7327,180
+1299,2025-09-15,Academic Study Hall,Academic,Neutral,Art,Cone Center,35.3078,-80.7364,77
+1300,2025-09-16,Academic Mixer,Academic,Neutral,Biology,CHHS,35.3072,-80.7338,121
+1301,2025-09-17,Academic Talk,Academic,Neutral,Business,Student Union,35.3059,-80.7327,180
+1302,2025-09-17,Academic Mixer,Academic,Neutral,Business,CHHS,35.3072,-80.7338,148
+1303,2025-09-18,Career Workshop,Career,Neutral,CS,Atkins Library,35.3077,-80.7323,67
+1304,2025-09-19,Career Study Hall,Career,Stressed,Business,CHHS,35.3072,-80.7338,58
+1305,2025-09-20,Academic Mixer,Academic,Stressed,CS,Cone Center,35.3078,-80.7364,142
+1306,2025-09-21,Academic Workshop,Academic,Neutral,CS,Atkins Library,35.3077,-80.7323,96
+1307,2025-09-21,Academic Study Hall,Academic,Positive,Art,EPIC,35.3097,-80.7417,153
+1308,2025-09-22,Academic Mixer,Academic,Neutral,CS,Atkins Library,35.3077,-80.7323,112
+1309,2025-09-24,Academic Mixer,Academic,Neutral,CS,EPIC,35.3097,-80.7417,130
+1310,2025-09-24,Mindfulness Mixer,Mindfulness,Neutral,Art,CHHS,35.3072,-80.7338,74
+1311,2025-09-27,Academic Study Hall,Academic,Positive,Biology,Cone Center,35.3078,-80.7364,58
+1312,2025-09-27,Mindfulness Talk,Mindfulness,Stressed,Biology,Cone Center,35.3078,-80.7364,47
+1313,2025-09-28,Career Study Hall,Career,Stressed,Biology,Cone Center,35.3078,-80.7364,80
